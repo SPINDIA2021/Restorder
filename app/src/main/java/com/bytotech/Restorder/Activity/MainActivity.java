@@ -183,6 +183,8 @@ public class MainActivity extends AppCompatActivity
             replaceFragment(new AboutUsFragment());
         } else if (id == R.id.nav_share) {
             cc.showToast("Share");
+        }else if (id == R.id.nav_whatsapp) {
+           // cc.showToast("Share");
         } else if (id == R.id.nav_logout) {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

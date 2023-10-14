@@ -52,7 +52,7 @@ public class OrderAdapter extends RecyclerView.Adapter {
             holder.tvItemTitle.setText(cartList.get(position).order_id);
             holder.tvItemPrice.setText(mContext.getString(R.string.currency) + " " + cartList.get(position).total_price);
             holder.tvItemstatus.setText("Your order : " + cartList.get(position).status);
-            holder.tvItemDateTime.setText("Time: "+"12/12/2020: 4:50 PM");
+            holder.tvItemDateTime.setText("Time: "+cartList.get(position).order_date);
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -142,8 +142,8 @@ public class MenuDetailItemActivity extends AppCompatActivity implements View.On
 		LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 		rvComment.setLayoutManager(layoutManager);
 
-		videoView.setVisibility(View.GONE);
-		//getGetVideo();
+	//	videoView.setVisibility(View.GONE);
+		getGetVideo();
 		
 		((TextView) findViewById(R.id.tvItemWeight)).setText(strMenuWeight);
 		assert preferenceUtils.getCartCount() != null;

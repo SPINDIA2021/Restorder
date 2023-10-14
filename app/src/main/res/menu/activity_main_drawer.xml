@@ -39,6 +39,10 @@
             android:id="@+id/nav_about_us"
             android:icon="@drawable/selector_about_us"
             android:title="@string/about_us" />
+        <item
+            android:id="@+id/nav_whatsapp"
+            android:icon="@drawable/whatsapp"
+            android:title="Whatsapp Support"/>
 
         <item
             android:id="@+id/nav_share"

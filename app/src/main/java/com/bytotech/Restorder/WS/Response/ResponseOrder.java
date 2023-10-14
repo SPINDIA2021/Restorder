@@ -18,5 +18,6 @@ public class ResponseOrder {
 		public String order_id;
 		public String status;
 		public String total_price;
+		public String order_date;
 		}
 	}

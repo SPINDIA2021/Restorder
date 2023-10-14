@@ -104,7 +104,7 @@ public interface eRestroAPI {
 	Call<ResponseMenu> getMenuList();
 	
 	@GET(Constant.WEBSERVICE_API_PATH)
-	Call<ResponseMenuDetail> getMenuDetailList(@Query("menu_list_cat_id") String menu_list_cat_id,
+	Call<ResponseMenuDetail> getMenuDetailList(@Query("menu_list_cat_id") String menu_list_cat_id,@Query("menu_list_subcat_id") String menu_list_subcat_id,
 	                                           @Query("user_id") String user_id);
 	
 	@GET(Constant.WEBSERVICE_API_PATH)

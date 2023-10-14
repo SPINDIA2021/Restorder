@@ -174,17 +174,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 								edOTP.setError("OTP doesnot match.");
 								edOTP.requestFocus();
 							}else {
-								from="L";
+								getLogin();
+								/*from="L";
 
 								cvMobile.setVisibility(View.GONE);
 								cvOTP.setVisibility(View.GONE);
 								cvEmail.setVisibility(View.VISIBLE);
-								cvPassword.setVisibility(View.VISIBLE);
+								cvPassword.setVisibility(View.VISIBLE);*/
 
 							}
 						}else if (from.equals("L")){
 							if (isValidate()) {
-								getLogin();
+								//getLogin();
 							}
 						}
 					} else  {
@@ -402,6 +403,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 					cc.showToast(response.body().getLoginDetail().getOtp().toString());
 					//Toast.makeText(LoginActivity.this, response.body().getLoginDetail().getOtp().toString(), Toast.LENGTH_SHORT).show();
 					otpGet=response.body().getLoginDetail().getOtp().toString();
+					strEmail=response.body().getLoginDetail().getEmail();
+					strPassword=response.body().getLoginDetail().getPassword();
 
 					cvMobile.setVisibility(View.GONE);
 					cvOTP.setVisibility(View.VISIBLE);
@@ -409,8 +412,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 					cvPassword.setVisibility(View.GONE);
 					from="O";
 
-					edtEmail.setText(response.body().getLoginDetail().getEmail());
-					edtPassword.setText(response.body().getLoginDetail().getPassword());
+				/*	edtEmail.setText(response.body().getLoginDetail().getEmail());
+					edtPassword.setText(response.body().getLoginDetail().getPassword());*/
 
 				}else {
 					cc.showToast(response.body().getResponse().getMessage());

@@ -170,7 +170,6 @@ public class OrderDetailsActivity extends AppCompatActivity {
                     dialog.dismiss();
                 } else {
                     cc.showToast(getString(R.string.msg_no_internet));
-
                 }
             }
         });

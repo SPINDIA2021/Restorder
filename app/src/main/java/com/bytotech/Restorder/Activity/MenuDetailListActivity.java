@@ -40,7 +40,7 @@ public class MenuDetailListActivity extends AppCompatActivity {
 	private TextView tvNoData;
 	private List<ResponseMenuDetail.MenuListCat> menucategoryLists;
 	private MenuDetailAdapter menuDetailAdapter;
-	private String id;
+	private String id, subcatId;
 	private ImageView ivBack, ivCart;
 	
 	@Override
@@ -51,6 +51,7 @@ public class MenuDetailListActivity extends AppCompatActivity {
 		cc = new CommonClass(this);
 		preferenceUtils = new PreferenceUtils(this);
 		id = getIntent().getStringExtra("id");
+		subcatId=getIntent().getStringExtra("subcatid");
 		if (preferenceUtils.getCartCount().equals("") || preferenceUtils.getCartCount().equals("0")) {
 			findViewById(R.id.tvCartCount).setVisibility(View.GONE);
 		} else {
@@ -101,7 +102,7 @@ public class MenuDetailListActivity extends AppCompatActivity {
 	public void getMenuDetailList() {
 		progressbar.setVisibility(View.VISIBLE);
 		eRestroAPI dawaAPI = RestApi.createAPI();
-		Call<ResponseMenuDetail> call = dawaAPI.getMenuDetailList(id, preferenceUtils.getUserId());
+		Call<ResponseMenuDetail> call = dawaAPI.getMenuDetailList(id,subcatId, preferenceUtils.getUserId());
 		call.enqueue(new Callback<ResponseMenuDetail>() {
 			@Override
 			public void onResponse(Call<ResponseMenuDetail> call, Response<ResponseMenuDetail> response) {

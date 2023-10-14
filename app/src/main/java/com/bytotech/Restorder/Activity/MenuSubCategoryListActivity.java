@@ -103,7 +103,8 @@ public class MenuSubCategoryListActivity extends AppCompatActivity {
 			public void onDetailClick(int position) {
 
 				Intent intent = new Intent(MenuSubCategoryListActivity.this, MenuDetailListActivity.class);
-				intent.putExtra("id", subCategoryResponses.get(position).getCid());
+				intent.putExtra("subcatid",subCategoryResponses.get(position).getCid());
+				intent.putExtra("id", id);
 				ActivityOptions options =
 						ActivityOptions.makeCustomAnimation(MenuSubCategoryListActivity.this, R.anim.slide_in, R.anim.slide_out);
 				startActivity(intent, options.toBundle());
